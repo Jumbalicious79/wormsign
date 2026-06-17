@@ -191,7 +191,6 @@ var DiscoveryRoots = []string{
 	"{HOME}/Library/Mobile Documents",
 	"{HOME}/Library/CloudStorage",
 	"{HOME}/Dropbox",
-	"{HOME}/Dropbox",
 	"{HOME}/OneDrive",
 	"{HOME}/Google Drive",
 	"/Volumes",
