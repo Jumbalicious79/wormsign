@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Built binaries
+/wormsign
+/dist/
+
+# Generated triage reports
+wormsign-*.md
+
+# Go
+*.test
+*.out
