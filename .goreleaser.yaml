@@ -1,0 +1,55 @@
+# GoReleaser configuration — https://goreleaser.com
+# Build & publish macOS binaries on each `vX.Y.Z` tag.
+version: 2
+
+project_name: wormsign
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: wormsign
+    main: .
+    binary: wormsign
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X github.com/Jumbalicious79/wormsign/cmd.version={{ .Version }}
+      - -X github.com/Jumbalicious79/wormsign/cmd.commit={{ .FullCommit }}
+      - -X github.com/Jumbalicious79/wormsign/cmd.date={{ .Date }}
+
+universal_binaries:
+  - id: wormsign
+    replace: true
+
+archives:
+  - id: wormsign
+    formats:
+      - tar.gz
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
+      - Merge pull request
+      - Merge branch
+
+release:
+  github:
+    owner: Jumbalicious79
+    name: wormsign

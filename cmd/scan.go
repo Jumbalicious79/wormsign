@@ -116,7 +116,7 @@ func runScan(_ *cobra.Command, _ []string) error {
 		CaptureUTC:     now.UTC().Format("2006-01-02 15:04:05"),
 		CaptureLocal:   now.Format("2006-01-02 15:04:05 MST"),
 		OutputPath:     outputPath,
-		WormsignVer:    version,
+		WormsignVer:    Version(),
 		RepoCount:      result.Discovery.ReposCount(),
 		NMCount:        result.Discovery.NodeModulesCount(),
 		DiscoveryRoots: result.Roots,
