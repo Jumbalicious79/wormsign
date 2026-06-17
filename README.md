@@ -1,5 +1,6 @@
 # wormsign
 
+[![CI](https://github.com/Jumbalicious79/wormsign/actions/workflows/ci.yml/badge.svg)](https://github.com/Jumbalicious79/wormsign/actions/workflows/ci.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/Jumbalicious79/wormsign.svg)](https://pkg.go.dev/github.com/Jumbalicious79/wormsign)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Jumbalicious79/wormsign)](https://goreportcard.com/report/github.com/Jumbalicious79/wormsign)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Jumbalicious79/wormsign)](go.mod)
